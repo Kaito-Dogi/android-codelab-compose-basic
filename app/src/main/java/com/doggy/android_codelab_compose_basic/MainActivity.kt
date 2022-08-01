@@ -22,16 +22,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.doggy.android_codelab_compose_basic.ui.components.MyApp
 import com.doggy.android_codelab_compose_basic.ui.theme.AndroidcodelabcomposebasicTheme
 
-class MainActivity : ComponentActivity() {
+internal class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -39,17 +39,6 @@ class MainActivity : ComponentActivity() {
                 MyApp()
             }
         }
-    }
-}
-
-@Composable
-fun MyApp() {
-    var shouldShowOnBoarding by rememberSaveable { mutableStateOf(true) }
-
-    if (shouldShowOnBoarding) {
-        OnBoardingScreen { shouldShowOnBoarding = !shouldShowOnBoarding }
-    } else {
-        Greetings()
     }
 }
 
