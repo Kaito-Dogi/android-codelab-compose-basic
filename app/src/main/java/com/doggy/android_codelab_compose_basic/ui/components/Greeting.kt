@@ -1,9 +1,11 @@
 package com.doggy.android_codelab_compose_basic.ui.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -20,13 +22,16 @@ internal fun Greeting(name: String) {
         horizontal = 8.dp,
       )
   ) {
-    Column(
-      modifier = Modifier
-        .fillMaxWidth()
-        .padding(24.dp)
-    ) {
-      Text(text = "Hello, ")
-      Text(text = "${name}!")
+    Row(modifier = Modifier.padding(24.dp)) {
+      Column(modifier = Modifier.weight(1f)) {
+        Text(text = "Hello, ")
+        Text(text = "${name}!")
+      }
+      OutlinedButton(
+        onClick = { /*TODO*/ }
+      ) {
+        Text(text = "Show More")
+      }
     }
   }
 }
