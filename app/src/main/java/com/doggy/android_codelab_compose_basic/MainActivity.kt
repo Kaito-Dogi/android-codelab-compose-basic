@@ -116,9 +116,12 @@ fun Greeting(name: String) {
     showBackground = true,
     widthDp = 320,
     uiMode = UI_MODE_NIGHT_YES,
-    name = "DefaultPreviewDark"
+    name = "DefaultPreviewDark",
 )
-@Preview(showBackground = true, widthDp = 320)
+@Preview(
+    showBackground = true,
+    widthDp = 320,
+)
 @Composable
 fun DefaultPreview() {
     AndroidcodelabcomposebasicTheme {
