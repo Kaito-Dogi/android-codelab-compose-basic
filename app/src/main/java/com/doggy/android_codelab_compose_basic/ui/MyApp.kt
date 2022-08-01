@@ -1,18 +1,13 @@
-package com.doggy.android_codelab_compose_basic.ui.components
+package com.doggy.android_codelab_compose_basic.ui
 
 import android.content.res.Configuration
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
+import com.doggy.android_codelab_compose_basic.ui.components.Greetings
 import com.doggy.android_codelab_compose_basic.ui.screens.OnBoardingScreen
 import com.doggy.android_codelab_compose_basic.ui.theme.AndroidcodelabcomposebasicTheme
 
