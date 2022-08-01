@@ -6,22 +6,24 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.doggy.android_codelab_compose_basic.ui.screens.OnBoardingScreen
 import com.doggy.android_codelab_compose_basic.ui.theme.AndroidcodelabcomposebasicTheme
 
 @Composable
-internal fun MyApp(names: List<String> = listOf("Android", "Compose")) {
-  Surface(color = MaterialTheme.colors.background) {
-    Column(
-      modifier = Modifier
-        .padding(vertical = 4.dp)
-    ) {
-      for (name in names) {
-        Greeting(name = name)
-      }
-    }
+internal fun MyApp() {
+  var shouldShowOnBoarding by remember { mutableStateOf(true) }
+
+  if (shouldShowOnBoarding) {
+    OnBoardingScreen(onContinueClicked = { shouldShowOnBoarding = false })
+  } else {
+    Greetings()
   }
 }
 
@@ -36,7 +38,7 @@ internal fun MyApp(names: List<String> = listOf("Android", "Compose")) {
   widthDp = 320,
 )
 @Composable
-fun DefaultPreview() {
+internal fun DefaultPreview() {
   AndroidcodelabcomposebasicTheme {
     MyApp()
   }
