@@ -16,6 +16,8 @@ import androidx.compose.ui.unit.dp
 @Composable
 internal fun Greeting(name: String) {
   val expand = remember { mutableStateOf(false) }
+  val extraPadding = if (expand.value) 48.dp else 0.dp
+
   Surface(
     color = MaterialTheme.colors.primary,
     modifier = Modifier
@@ -25,7 +27,11 @@ internal fun Greeting(name: String) {
       )
   ) {
     Row(modifier = Modifier.padding(24.dp)) {
-      Column(modifier = Modifier.weight(1f)) {
+      Column(
+        modifier = Modifier
+          .weight(1f)
+          .padding(bottom = extraPadding)
+      ) {
         Text(text = "Hello, ")
         Text(text = "${name}!")
       }
