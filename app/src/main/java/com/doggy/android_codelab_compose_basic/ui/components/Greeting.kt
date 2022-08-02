@@ -3,10 +3,14 @@ package com.doggy.android_codelab_compose_basic.ui.components
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.Icon
+import androidx.compose.material.IconButton
 import androidx.compose.material.MaterialTheme
-import androidx.compose.material.OutlinedButton
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ExpandLess
+import androidx.compose.material.icons.filled.ExpandMore
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -41,10 +45,13 @@ internal fun Greeting(name: String) {
           ),
         )
       }
-      OutlinedButton(
+      IconButton(
         onClick = { expand.value = !expand.value },
       ) {
-        Text(text = if (expand.value) "Show Less" else "Show More")
+        Icon(
+          imageVector = if (expand.value) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
+          contentDescription = if (expand.value) "Show less" else "Show more",
+        )
       }
     }
   }
