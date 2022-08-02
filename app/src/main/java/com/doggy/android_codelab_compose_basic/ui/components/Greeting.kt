@@ -1,5 +1,8 @@
 package com.doggy.android_codelab_compose_basic.ui.components
 
+import androidx.compose.animation.animateContentSize
+import androidx.compose.animation.core.Spring
+import androidx.compose.animation.core.spring
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
@@ -33,11 +36,20 @@ internal fun Greeting(name: String) {
         horizontal = 8.dp,
       )
   ) {
-    Row(modifier = Modifier.padding(24.dp)) {
+    Row(
+      modifier = Modifier
+        .padding(12.dp)
+        .animateContentSize(
+          animationSpec = spring(
+            dampingRatio = Spring.DampingRatioMediumBouncy,
+            stiffness = Spring.StiffnessLow,
+          )
+        )
+    ) {
       Column(
         modifier = Modifier
           .weight(1f)
-          .padding(bottom = extraPadding)
+          .padding(12.dp)
       ) {
         Text(text = "Hello, ")
         Text(
@@ -46,16 +58,20 @@ internal fun Greeting(name: String) {
             fontWeight = FontWeight.ExtraBold,
           ),
         )
+        if (expand.value) {
+          Text(text = ("Hidden text, ").repeat(20))
+        }
       }
       IconButton(
         onClick = { expand.value = !expand.value },
       ) {
-        val contentDescription: String =
-          if (expand.value) stringResource(id = R.string.show_less)
-          else stringResource(id = R.string.show_more)
         Icon(
           imageVector = if (expand.value) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-          contentDescription = contentDescription,
+          contentDescription = if (expand.value) {
+            stringResource(id = R.string.show_less)
+          } else {
+            stringResource(id = R.string.show_more)
+          },
         )
       }
     }
