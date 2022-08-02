@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.doggy.android_codelab_compose_basic.ui.theme.AndroidcodelabcomposebasicTheme
+import com.doggy.android_codelab_compose_basic.ui.theme.AndroidCodelabComposeBasicTheme
 
 @Composable
 internal fun OnBoardingScreen(onContinueClicked: () -> Unit) {
@@ -39,7 +39,7 @@ internal fun OnBoardingScreen(onContinueClicked: () -> Unit) {
 )
 @Composable
 internal fun OnBoardingPreview() {
-  AndroidcodelabcomposebasicTheme {
+  AndroidCodelabComposeBasicTheme {
     OnBoardingScreen(onContinueClicked = { /* do nothing */ })
   }
 }

@@ -10,7 +10,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.doggy.android_codelab_compose_basic.ui.MyApp
 import com.doggy.android_codelab_compose_basic.ui.components.Greeting
-import com.doggy.android_codelab_compose_basic.ui.theme.AndroidcodelabcomposebasicTheme
+import com.doggy.android_codelab_compose_basic.ui.theme.AndroidCodelabComposeBasicTheme
 
 @Composable
 internal fun GreetingsScreen(names: List<String> = List(1000) { "$it" }) {
@@ -33,7 +33,7 @@ internal fun GreetingsScreen(names: List<String> = List(1000) { "$it" }) {
 )
 @Composable
 internal fun GreetingsPreview() {
-  AndroidcodelabcomposebasicTheme {
+  AndroidCodelabComposeBasicTheme {
     MyApp()
   }
 }

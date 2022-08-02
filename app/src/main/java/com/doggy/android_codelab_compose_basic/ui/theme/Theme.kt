@@ -29,34 +29,34 @@ import androidx.compose.ui.graphics.Color
 // )
 
 private val DarkColorPalette = darkColors(
-    surface = Blue,
-    onSurface = Navy,
-    primary = Navy,
-    onPrimary = Chartreuse
+  surface = Blue,
+  onSurface = Navy,
+  primary = Navy,
+  onPrimary = Chartreuse
 )
 
 private val LightColorPalette = lightColors(
-    surface = Blue,
-    onSurface = Color.White,
-    primary = LightBlue,
-    onPrimary = Navy
+  surface = Blue,
+  onSurface = Color.White,
+  primary = LightBlue,
+  onPrimary = Navy
 )
 
 @Composable
-fun AndroidcodelabcomposebasicTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
+fun AndroidCodelabComposeBasicTheme(
+  darkTheme: Boolean = isSystemInDarkTheme(),
+  content: @Composable () -> Unit
 ) {
-    val colors = if (darkTheme) {
-        DarkColorPalette
-    } else {
-        LightColorPalette
-    }
+  val colors = if (darkTheme) {
+    DarkColorPalette
+  } else {
+    LightColorPalette
+  }
 
-    MaterialTheme(
-        colors = colors,
-        typography = Typography,
-        shapes = Shapes,
-        content = content
-    )
+  MaterialTheme(
+    colors = colors,
+    typography = Typography,
+    shapes = Shapes,
+    content = content
+  )
 }
