@@ -26,7 +26,6 @@ import com.doggy.android_codelab_compose_basic.R
 @Composable
 internal fun Greeting(name: String) {
   val expand = remember { mutableStateOf(false) }
-  val extraPadding = if (expand.value) 48.dp else 0.dp
 
   Surface(
     color = MaterialTheme.colors.primary,
