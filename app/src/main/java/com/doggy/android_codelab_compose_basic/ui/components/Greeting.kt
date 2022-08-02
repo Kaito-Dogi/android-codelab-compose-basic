@@ -15,8 +15,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.doggy.android_codelab_compose_basic.R
 
 @Composable
 internal fun Greeting(name: String) {
@@ -48,9 +50,12 @@ internal fun Greeting(name: String) {
       IconButton(
         onClick = { expand.value = !expand.value },
       ) {
+        val contentDescription: String =
+          if (expand.value) stringResource(id = R.string.show_less)
+          else stringResource(id = R.string.show_more)
         Icon(
           imageVector = if (expand.value) Icons.Filled.ExpandLess else Icons.Filled.ExpandMore,
-          contentDescription = if (expand.value) "Show less" else "Show more",
+          contentDescription = contentDescription,
         )
       }
     }
